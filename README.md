@@ -1,5 +1,11 @@
-I have an hierarchical organisational chart against which I want to populate budget vs actual variance analysis in a Power BI report. Each level of the hierarchy has it's own narrative, the parent containing summary analysis of each child. The problem is that I can only get the hierarchy to populate the leaf nodes, specifically, each parent displays the narrative for the first leaf element below it so only the leaf nodes display as required.
+I had a problem getting narrative at the appropriate level of a hierarchy in a monthly financial report with budget vs actual narrative. This is just a simplified version demonstrating key components. 
 
-The dataset is fairly complex but I have replicated the problem in this simplified *.pbix file that contains hierachical data for country, state and city that demonstrates it perfectly. In this example, I display the narrative both as a value in the matrix and as a tooltip; both display the same problem. In the actual file, I will only be using the tooltip.
+The Power BI file has two report pages and two tooltip pages. Narrative - Non Hierarchical uses the Layout tooltip page and the Hierarchy Narrative uses the Tooltip page for the tooltip. 
 
-Keen to hear if anyone has a workaround or other solution to enable each level of a hierarchy to display its actual narrative, rather than that of the first leaf node.
+### Narrative - Non Hierarchical: 
+This is the working report with the technique I used in production using a measure filtered accordingly to return the correct narrative for each element when scrolled over.
+
+### Hierarchy Narrative:
+This simply demonstrates the problem; parent levels return the narrative for the first leaf below them.
+
+The workbook is also included for anyone wanting to play around with it. It's an xlsm file as I included the code to indent the descriptions according to the level in the hierarchy; the actual datasource has way too many to do manually so coding it was much more efficient.
